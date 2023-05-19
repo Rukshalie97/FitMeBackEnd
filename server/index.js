@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 import categoryRoutes from './routes/category.js';
 import exerciseRoutes from './routes/exercise.js';
 import levelRoutes from './routes/level.js'
+import genderRoutes from './routes/gender.js'
+import goalRoutes from './routes/goal.js'
 
 const app = express();
 const PORT = 5003;
@@ -25,6 +27,13 @@ app.use('/api/exercise', exerciseRoutes);
 
 //Level Routes
 app.use('/api/level', levelRoutes);
+
+//Gender Routes
+app.use('/api/user', genderRoutes);
+
+app.use('/api/goal', goalRoutes);
+
+app.use('/api/gender', genderRoutes);
 
 
 

@@ -7,7 +7,9 @@ const exerciseSchema = new mongoose.Schema(
     video: { type: String, required: true },
     description: { type: String, required: true },
     category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
-    level: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
+    level: { type: mongoose.Schema.Types.ObjectId, ref: 'Level' },
+    gender: { type: mongoose.Schema.Types.ObjectId, ref: 'Gender' },
+    goal: { type: mongoose.Schema.Types.ObjectId, ref: 'Goal' },
   },
   { timestamps: true, versionKey: false }
 );
