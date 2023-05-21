@@ -1,7 +1,7 @@
 import User from '../models/user.js';
-import bcrypt from 'bcrypt';
-import { createError } from './../utils/error.js';
-import jwt from 'jsonwebtoken';
+//import bcrypt from 'bcrypt';
+//import { createError } from './../utils/error.js';
+//import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 dotenv.config();

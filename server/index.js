@@ -1,13 +1,14 @@
 import express from 'express';
 import connect from './database.js';
 import cors from 'cors';
-import userRoutes from './routes/user.js'
+import userRoutes from './routes/user.js';
 import cookieParser from 'cookie-parser';
 import categoryRoutes from './routes/category.js';
 import exerciseRoutes from './routes/exercise.js';
-import levelRoutes from './routes/level.js'
-import genderRoutes from './routes/gender.js'
-import goalRoutes from './routes/goal.js'
+import levelRoutes from './routes/level.js';
+import genderRoutes from './routes/gender.js';
+import goalRoutes from './routes/goal.js';
+import personalWorkoutRoutes from './routes/personalWorkout.js';
 
 const app = express();
 const PORT = 5003;
@@ -16,27 +17,26 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 
-//User Routes
+// User Routes
 app.use('/api/user', userRoutes);
 
-//Category Routes
+// Category Routes
 app.use('/api/category', categoryRoutes);
 
-//Exercise Routes
+// Exercise Routes
 app.use('/api/exercise', exerciseRoutes);
 
-//Level Routes
+// Level Routes
 app.use('/api/level', levelRoutes);
 
-//Gender Routes
-app.use('/api/user', genderRoutes);
-
-app.use('/api/goal', goalRoutes);
-
+// Gender Routes
 app.use('/api/gender', genderRoutes);
 
+// Goal Routes
+app.use('/api/goal', goalRoutes);
 
-
+// Personal Workout Routes
+app.use('/api/personalWorkouts', personalWorkoutRoutes);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
